@@ -1,4 +1,4 @@
-# <Shape>
+# Shape
 
 Lil' Component that brings svg shapes to your project. Typescript, Rollup.
 
@@ -7,10 +7,13 @@ Lil' Component that brings svg shapes to your project. Typescript, Rollup.
 ## Use it
 
 ```javascript
+
+const [isOpen, setOpen] = useState<boolean>(true); 
+
 return (
     <>
         <Shape.Circle />
-        <Shape.Circle transforms="rotate(90deg)" />
+        <Shape.Circle transforms={isOpen ? "rotate(90deg)" : undefined} />
         <Shape.Square />
         <Shape sides={5} />
         <Shape sides={6} />
@@ -22,11 +25,11 @@ return (
 
 | Prop name  | Accepts |      Default |
 | :--------- | :-----: | -----------: |
-| className  | string  |         null |
+| className  | string  |         undefined |
 | fill       | string  | currentColor |
 | size       | number  |           69 |
 | sides      | number  |            3 |
-| transforms | string  |         null |
+| transforms | string  |         undefined |
 
 ## Install
 
